@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from main.models import Article
 
 def index_page(request):
@@ -11,3 +12,9 @@ def about_page(request):
 
 class ArticleListView(ListView):
     model = Article
+    context_object_name = 'articles'
+    ordering = '-id'
+
+class ArticleDetailView(DetailView):
+    model = Article
+    context_object_name = 'article'

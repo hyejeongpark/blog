@@ -20,5 +20,6 @@ from main import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.ArticleListView.as_view()),
+    url(r'^article/(?P<pk>[0-9]+)/$', views.ArticleDetailView.as_view()),
     url(r'^about$', views.about_page),
 ]

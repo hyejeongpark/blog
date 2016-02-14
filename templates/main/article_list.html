@@ -1,9 +1,9 @@
 <h1>article list</h1>
 
 <ul>
-{% for article in article_list %}
+{% for article in articles %}
     <li>
-        <h3>{{ article.title }}</h3>
+        <h3><a href="/article/{{ article.id }}">{{ article.title }}</a></h3>
         <div>{{ article.content }}</div>
     </li>
 {% endfor %}
